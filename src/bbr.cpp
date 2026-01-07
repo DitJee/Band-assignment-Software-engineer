@@ -87,7 +87,7 @@ std::string BBR::isGoodBoy_ReadFile(const std::string &path)
 
 void BBR::test()
 {
-    std::cout << "running test for Boss Baby's Revenge" << std::endl;
+    std::cout << "[Boss Baby's Revenge] running tests" << std::endl;
 
     // simple test
     {
@@ -138,5 +138,5 @@ void BBR::test()
         assert(isGoodBoy_ReadFile(TEST_FILE_PATH) == BAD_BOY);
     }
 
-    std::cout << "All tests for Boss Baby's Revenge passed!" << std::endl;
+    std::cout << "[Boss Baby's Revenge] All tests passed!" << std::endl;
 }
