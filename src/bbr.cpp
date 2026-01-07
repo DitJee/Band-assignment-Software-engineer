@@ -1,12 +1,16 @@
 #include "bbr.h"
 #include <iostream>
 #include <cassert>
+#include <fstream>
 
 namespace BBR
 {
     const std::string BAD_BOY = "Bad boy";
     const std::string GOOD_BOY = "Good boy";
+    const std::string ERROR_INVALID_FILE_PATH = "invalid file path";
     const std::string ERROR_INVALID_STR_LENGTH = "invalid str length";
+    const std::string TEST_FILE_PATH = "data/input.txt";
+
 }
 
 std::string BBR::isGoodBoy_Simple(const std::string &str)
@@ -24,6 +28,40 @@ std::string BBR::isGoodBoy_Simple(const std::string &str)
 
     int balance = 0;
     for (const char c : str)
+    {
+        if (c == 'S')
+        {
+            ++balance;
+        }
+        else if (c == 'R')
+        {
+            if (balance > 0)
+            {
+                --balance;
+            }
+        }
+        else
+        {
+            // disable this for now
+            // since it is not stated in the requirement
+            // throw std::runtime_error("invalid char");
+        }
+    }
+
+    return (balance == 0) ? GOOD_BOY : BAD_BOY;
+}
+
+std::string BBR::isGoodBoy_ReadFile(const std::string &path)
+{
+    std::ifstream in(path, std::ios::binary);
+    if (!in)
+    {
+        throw std::runtime_error(ERROR_INVALID_FILE_PATH);
+    }
+
+    int balance = 0;
+    char c;
+    while (in.get(c))
     {
         if (c == 'S')
         {
@@ -82,6 +120,22 @@ void BBR::test()
         assert(isGoodBoy_Simple("SSSRRRRS") == BAD_BOY);
         assert(isGoodBoy_Simple("SRRSSR") == BAD_BOY);
         assert(isGoodBoy_Simple("SSRSRR") == GOOD_BOY);
+    }
+
+    // read file test
+    {
+        try
+        {
+            std::string false_file_path = "data/hehe.txt";
+            isGoodBoy_ReadFile(false_file_path);
+            assert(false); // should not reach
+        }
+        catch (std::runtime_error err)
+        {
+            assert(std::string(err.what()) == ERROR_INVALID_FILE_PATH);
+        }
+
+        assert(isGoodBoy_ReadFile(TEST_FILE_PATH) == BAD_BOY);
     }
 
     std::cout << "All tests for Boss Baby's Revenge passed!" << std::endl;
