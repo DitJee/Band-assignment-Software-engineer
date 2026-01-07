@@ -57,3 +57,8 @@ build/
 # Logs and other temporary files
 *.log
 *.tmp
+
+src/bbr
+data/nk_gen
+data/sr_gen
+src/scr
