@@ -1,0 +1,59 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Linker files
+*.ilk
+*.lib
+*.lai
+*.la
+
+# Debugger Files
+*.pdb
+*.ipdb
+*.dwo
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Executables
+*.exe
+*.out
+*.app
+*.run
+
+# Visual Studio files (if using VS on Windows to edit WSL files)
+.vs/
+*.VC.db
+*.VC.opendb
+*.sdf
+*.suo
+*.user
+*.config
+ipch/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+Win32/
+build/
+
+# Package Files
+*.orig
+*.rej
+*.bak
+*~
+# Logs and other temporary files
+*.log
+*.tmp

@@ -1,0 +1,44 @@
+# Build artifacts
+build/
+cmake-build-*/
+out/
+bin/
+obj/
+*.o
+*.a
+*.so
+*.exe
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Debug / profiling
+*.dSYM/
+*.prof
+*.gcda
+*.gcno
+*.gcov
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose.yml
+
+# Logs
+*.log
