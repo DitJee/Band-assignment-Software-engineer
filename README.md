@@ -108,6 +108,14 @@ std::string BBR::isGoodBoy_Simple(const std::string &str)
 }
 ```
 
+### Complexity Analysis
+
+| Metric    | Value |
+| -------- | ------- |
+| Time complexity | O(n)   |
+| Space complexity | O(1)    |
+
+
 This solution works, but storing up to a million-characters string in memory might not be ideal in some cases. So, I worked on another solution.
 
 ### Solution#2:
@@ -153,6 +161,14 @@ std::string BBR::isGoodBoy_ReadFile(const std::string &path)
 This solution allows for longer seqeuences. However, it introduces additional I/O overhead, which may make it slower than the in-memory version for smaller inputs.
 
 In practice, the in-memory solution is preferred when the input comfortably fits in memory, while the streaming solution is more suitable when input size or memory usage is a concern.
+
+### Complexity Analysis
+
+| Metric    | Value |
+| -------- | ------- |
+| Time complexity | O(n)   |
+| Space complexity | O(1)    |
+
 
 ## Problem 2: Superman's Chicken Rescue
 ### Description: 
@@ -248,7 +264,12 @@ The process is as follows:
 
 The problem with this solution is the same as problem#1. There is an additional I/O overhead. Moreover, the vector can be really large in this case, so there might be an exception regarding memory allocation. 
 
+### Complexity Analysis
 
+| Metric    | Value |
+| -------- | ------- |
+| Time complexity | O(n)   |
+| Space complexity | O(n)    |
 
 
 ## Problem 3: Design oracle system
