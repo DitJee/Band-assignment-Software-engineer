@@ -268,7 +268,7 @@ The oracle system provides aggregated price data and stores incoming price data 
 GET /price/{tokenSymbol}
 ```
 
-**Get historical price**
+**Post price**
 
 ```
 GET /price/submit/?symbol={tokenSymbol}?timestamp={epochUnixTimestamp}?signature={signature}
