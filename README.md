@@ -4,7 +4,7 @@
 * [Problem 2: Superman's Chicken Rescue](#problem-2-supermans-chicken-rescue)
 * [Problem 3: Design oracle system](#problem-3-design-oracle-system)
 
-## Problem Introduction
+## Introduction
 
 ### Docker
 
